@@ -8,7 +8,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
 
-    public class SeedData
+    public static class SeedData
     {
         public static async Task Initialize(IServiceProvider serviceProvider)
         {

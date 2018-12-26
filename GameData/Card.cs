@@ -8,6 +8,8 @@
 
     public class Card
     {
+        private string traits;
+
         public int Id { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
@@ -18,7 +20,16 @@
         public virtual PlotStats PlotStats { get; set; }
         public string Strength { get; set; }
         [JsonIgnore]
-        public string Traits { get; set; }
+        public string Traits
+        {
+            get => traits;
+            set
+            {
+                traits = value;
+                TraitList = value.Split(",", StringSplitOptions.RemoveEmptyEntries).ToList();
+            }
+        }
+
         public bool Unique { get; set; }
         public bool Loyal { get; set; }
         public virtual CardIcons Icons { get; set; }
@@ -43,6 +54,6 @@
 
         [NotMapped]
         [JsonProperty(PropertyName = "traits")]
-        public List<string> TraitList => Traits.Split(",", StringSplitOptions.RemoveEmptyEntries).ToList();
+        public List<string> TraitList { get; private set; } = new List<string>();
     }
 }
