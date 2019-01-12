@@ -1,6 +1,6 @@
 ﻿namespace CrimsonDev.Throneteki.Data.Constants
 {
-    public class CardType
+    public static class CardType
     {
         public const string Plot = "plot";
         public const string Event = "event";

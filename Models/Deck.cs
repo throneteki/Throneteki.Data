@@ -38,9 +38,14 @@
             }
         }
 
-        [NotMapped]
-        public List<DeckCard> NormalCards => DeckCards.Where(dc => dc.CardType == DeckCardType.Normal).ToList();
-        [NotMapped]
-        public List<DeckCard> RookeryCards => DeckCards.Where(dc => dc.CardType == DeckCardType.Rookery).ToList();
+        public List<DeckCard> GetNormalCards()
+        {
+            return DeckCards.Where(dc => dc.CardType == DeckCardType.Normal).ToList();
+        }
+
+        public List<DeckCard> GetRookeryCards()
+        {
+            return DeckCards.Where(dc => dc.CardType == DeckCardType.Rookery).ToList();
+        }
     }
 }
