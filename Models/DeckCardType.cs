@@ -2,9 +2,7 @@
 {
     public enum DeckCardType
     {
-        Draw,
-        Plot,
-        Banner,
+        Normal,
         Rookery
     }
 }
