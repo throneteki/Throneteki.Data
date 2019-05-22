@@ -29,12 +29,7 @@
             {
                 var allianceAgenda = DeckCards.SingleOrDefault(dc => dc.CardType == DeckCardType.Normal && dc.Card.Code == "06018");
 
-                if (allianceAgenda != null)
-                {
-                    return allianceAgenda.Card;
-                }
-
-                return DeckCards.SingleOrDefault(dc => dc.CardType == DeckCardType.Normal && (dc.Card.Code == "06018" || dc.Card.Type == CardType.Agenda))?.Card;
+                return allianceAgenda != null ? allianceAgenda.Card : DeckCards.SingleOrDefault(dc => dc.CardType == DeckCardType.Normal && (dc.Card.Code == "06018" || dc.Card.Type == CardType.Agenda))?.Card;
             }
         }
 
